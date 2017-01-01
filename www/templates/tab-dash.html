@@ -1,0 +1,41 @@
+<ion-view view-title="RENT CALCULATOR">
+  <ion-content class="padding">
+    <section>
+      <form ng-submit="addAmount()">
+      <label class="item item-input">
+        <span class="input-label">Amount?</span>
+        <input type="number"  id="focus" data-ng-model="apps.newAmount" autocomplete="off" autofocus="">
+      </label>
+      <label class="item item-input item-select addTopSpace">
+        <div class="input-label">
+          <i class="icon ion-person"></i>
+        </div>
+        <select data-ng-model="apps.currentMember" ng-options="member.id as member.name for member in members"></select> 
+      </label>
+       
+      </form>
+         <ul class="list addTopSpace">
+            <li class="item item-checkbox checkbox-assertive"  ng-repeat="member in members">
+             <span>{{member.name}}</span>
+             <span> : {{member.amount}}</span>
+             <label class="checkbox">
+             <input type="checkbox" ng-model="checkedIds[member.id]" ng-change="stateChanged(member.id)">
+             </label>
+            </li>
+          </ul>
+    </section>
+    <section>
+      <header>
+        <h1>History</h1>
+      </header>
+      <span ng-repeat="History in HistoryList track by $index">
+            <span>{{History.HistId}}. </span>
+            <span>{{History.sourceName}} spends </span>
+            <span>  Rs.{{History.amount}} for </span>
+            <span> {{History.members}} </span><br/>
+      </span>
+    </section>
+  </ion-content>
+      <div class="plusnewad" ng-click="addAmount()"><i class="icon ion-ios-plus-empty"></i> </div>
+
+</ion-view>

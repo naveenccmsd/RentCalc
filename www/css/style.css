@@ -1,0 +1,19 @@
+/* Empty. Add your own CSS if you like */
+.addTopSpace
+{
+	margin-top:25px;
+}
+.plusnewad {
+    height: 56px;
+    width: 56px;
+    background: #db4437;
+    border-radius: 50%;
+    position: fixed;
+    right: 13px;
+    bottom: 50px;
+    text-align: center;
+    line-height: 56px;
+    font-size: 30px;
+    color: white;
+    box-shadow: 0 0 7px #888
+}
